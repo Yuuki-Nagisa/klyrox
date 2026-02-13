@@ -108,8 +108,9 @@ const HeroDiv = () => {
         }}
       >
         <img
-          src="/HeroDiv.jpeg"
+          src="images/HeroDiv.jpeg"
           alt="hello"
+          draggable="false"
           className="absolute w-full h-full object-cover"
         />
         <div className="absolute w-full h-200px overflow-hidden object-cover flex items-center justify-center ">
@@ -123,8 +124,9 @@ const HeroDiv = () => {
           </motion.h1>
         </div>
         <img
-          src="/masking.png"
+          src="images/masking.png"
           alt="hello"
+          draggable="false"
           className="absolute w-full h-full object-cover "
         />
       </motion.div>
