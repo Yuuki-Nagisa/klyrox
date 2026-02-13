@@ -1,5 +1,11 @@
+import HeroDiv from "./components/HeroDiv";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <HeroDiv />
+    </div>
+  );
 };
 
 export default App;
