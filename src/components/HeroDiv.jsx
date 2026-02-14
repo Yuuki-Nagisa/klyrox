@@ -4,7 +4,9 @@ import { useRef } from "react";
 const HeroDiv = () => {
   const words = ["Vision", "Code", "Impact"];
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll(ref);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
   const translateY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const borderRadius = useTransform(scrollYProgress, [0, 1], [0, 500]);
@@ -38,6 +40,7 @@ const HeroDiv = () => {
         >
           {words.map((word, idx) => (
             <motion.div
+              key={idx}
               className={`${idx % 2 == 0 ? "text-transparent" : "text-[#754e5f]"} [-webkit-text-stroke:3px_#754e5f] text-9xl overflow-visible`}
               animate={{ x: ["120vw", "-120vw"] }}
               transition={{
@@ -52,6 +55,7 @@ const HeroDiv = () => {
           ))}
           {words.map((word, idx) => (
             <motion.div
+              key={idx + 3}
               className={`${idx % 2 == 1 ? "text-transparent" : "text-[#754e5f] "} [-webkit-text-stroke:3px_#754e5f] text-9xl overflow-visible`}
               animate={{ x: ["120vw", "-120vw"] }}
               transition={{
@@ -70,6 +74,7 @@ const HeroDiv = () => {
         >
           {words.map((word, idx) => (
             <motion.div
+              key={idx}
               className={`${idx % 2 == 0 ? "text-transparent" : "text-[#754e5f]"} [-webkit-text-stroke:3px_#754e5f] text-9xl overflow-visible`}
               initial={{ x: "-125vw" }}
               animate={{ x: ["-120vw", "120vw"] }}
@@ -85,6 +90,7 @@ const HeroDiv = () => {
           ))}
           {words.map((word, idx) => (
             <motion.div
+              key={idx + 3}
               className={`${idx % 2 == 1 ? "text-transparent" : "text-[#754e5f] "} [-webkit-text-stroke:3px_#754e5f] text-9xl overflow-visible`}
               animate={{ x: ["-120vw", "120vw"] }}
               transition={{
